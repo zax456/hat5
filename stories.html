@@ -186,15 +186,11 @@
   </div>
 </nav>
 
-<!-- Third Container -->
-<div id='overlay'></div>
-<div id='modal'>
-  <div id='content'>No JavaScript Yet!</div>
-  <a href='#' id='close'>close</a>
-</div>
 
+<!-- Three screens of stories -->
 
 <div id="allstories">
+
 <div class="story1">
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
@@ -202,10 +198,27 @@
       <div class="caption">
         <h3>Thumbnail label</h3>
         <p>...</p>
-        <p><a href="file:///C:/Users/Sheryl%20Ker/Desktop/web3.html" onclick="javascript:void window.open('file:///C:/Users/Sheryl%20Ker/Desktop/web3.html','1490344772760','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');return false;">Pop-up Window</a> 
-      </div>
-    </div>
+        
+        <button id="myBtn" class="btn btn-primary">Read More!</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>In 2004, Harry Potter and the Prisoner of Azkaban was released. Watson was appreciative of the more assertive role Hermione played, calling her character "charismatic" and "a fantastic role to play".[32] Although critics panned Radcliffe's performance, labelling him "wooden", they praised Watson; The New York Times lauded her performance, saying "Luckily Mr. Radcliffe's blandness is offset by Ms. Watson's spiky impatience. Harry may show off his expanding wizardly skills ... but Hermione ... earns the loudest applause with a decidedly unmagical punch to Draco Malfoy's deserving nose."[33] Although Prisoner of Azkaban proved to be the lowest-grossing Harry Potter film of the entire series, Watson's personal performance won her two Otto Awards and the Child Performance of the Year award from Total Film.[34][35]
+With Harry Potter and the Goblet of Fire (2005), both Watson and the Harry Potter film series reached new milestones. The film set records for a Harry Potter opening weekend, a non-May opening weekend in the US, and an opening weekend in the UK. Critics praised the increasing maturity of Watson and her teenage co-stars; The New York Times called her performance "touchingly earnest".[36] For Watson, much of the humour of the film sprang from the tension among the three lead characters as they matured. She said, "I loved all the arguing. ... I think it's much more realistic that they would argue and that there would be problems."[37] Nominated for three awards for Goblet of Fire, Watson won a bronze Otto Award.[38][39] Later that year, Watson became the youngest person to appear on the cover of Teen Vogue,[40] an appearance she reprised in August 2009.[41] In 2006, Watson played Hermione in The Queen's Handbag, a special mini-episode of Harry Potter in celebration of Queen Elizabeth II's 80th birthday.[42]
+
+The fifth film in the Harry Potter franchise, Harry Potter and the Order of the Phoenix, was released in 2007. A huge financial success, the film set a record worldwide opening-weekend gross of $332.7 million.[43] Watson won the inaugural National Movie Award for Best Female Performance.[44] As the fame of the actress and the series continued, Watson and fellow Harry Potter co-stars Daniel Radcliffe and Rupert Grint left imprints of their hands, feet and wands in front of Grauman's Chinese Theatre in Hollywood on 9 July 2007.[45]
+By July 2007, Watson's work in the Harry Potter series was said to have earned her more than £10 million, and she acknowledged she would never have to work for money again.[6] In March 2009, she was ranked 6th on the Forbes list of "Most Valuable Young Stars",[46] and in February 2010, she was named as Hollywood's highest paid female star, having earned an estimated £19 million in 2009.[47]
+Despite the success of Order of the Phoenix, the future of the Harry Potter franchise became surrounded in doubt, as all three lead actors were hesitant to sign on to continue their roles for the final two episodes.[48] Radcliffe eventually signed for the final films on 2 March 2007,[48] but Watson was considerably more hesitant.[49] She explained that the decision was significant, as the films represented a further four-year commitment to the role, but eventually conceded that she "could never let [the role of] Hermione go",[50] signing for the role on 23 March 2007.[51]</p>
   </div>
+</div>
+
+</div>
+</div>
+</div>
 </div>
 
 <div class="story2">
@@ -231,39 +244,7 @@ The fifth film in the Harry Potter franchise, Harry Potter and the Order of the 
 By July 2007, Watson's work in the Harry Potter series was said to have earned her more than £10 million, and she acknowledged she would never have to work for money again.[6] In March 2009, she was ranked 6th on the Forbes list of "Most Valuable Young Stars",[46] and in February 2010, she was named as Hollywood's highest paid female star, having earned an estimated £19 million in 2009.[47]
 Despite the success of Order of the Phoenix, the future of the Harry Potter franchise became surrounded in doubt, as all three lead actors were hesitant to sign on to continue their roles for the final two episodes.[48] Radcliffe eventually signed for the final films on 2 March 2007,[48] but Watson was considerably more hesitant.[49] She explained that the decision was significant, as the films represented a further four-year commitment to the role, but eventually conceded that she "could never let [the role of] Hermione go",[50] signing for the role on 23 March 2007.[51]</p>
   </div>
-
 </div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
-
-
 
 
 </div>
@@ -278,13 +259,76 @@ window.onclick = function(event) {
       <div class="caption">
         <h3>Thumbnail label</h3>
         <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+
+        <button id="myBtn" class="btn btn-primary" onclick="clickbutton()">Read More!</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="closemodal">&times;</span>
+    <p>In 2004, Harry Potter and the Prisoner of Azkaban was released. Watson was appreciative of the more assertive role Hermione played, calling her character "charismatic" and "a fantastic role to play".[32] Although critics panned Radcliffe's performance, labelling him "wooden", they praised Watson; The New York Times lauded her performance, saying "Luckily Mr. Radcliffe's blandness is offset by Ms. Watson's spiky impatience. Harry may show off his expanding wizardly skills ... but Hermione ... earns the loudest applause with a decidedly unmagical punch to Draco Malfoy's deserving nose."[33] Although Prisoner of Azkaban proved to be the lowest-grossing Harry Potter film of the entire series, Watson's personal performance won her two Otto Awards and the Child Performance of the Year award from Total Film.[34][35]
+With Harry Potter and the Goblet of Fire (2005), both Watson and the Harry Potter film series reached new milestones. The film set records for a Harry Potter opening weekend, a non-May opening weekend in the US, and an opening weekend in the UK. Critics praised the increasing maturity of Watson and her teenage co-stars; The New York Times called her performance "touchingly earnest".[36] For Watson, much of the humour of the film sprang from the tension among the three lead characters as they matured. She said, "I loved all the arguing. ... I think it's much more realistic that they would argue and that there would be problems."[37] Nominated for three awards for Goblet of Fire, Watson won a bronze Otto Award.[38][39] Later that year, Watson became the youngest person to appear on the cover of Teen Vogue,[40] an appearance she reprised in August 2009.[41] In 2006, Watson played Hermione in The Queen's Handbag, a special mini-episode of Harry Potter in celebration of Queen Elizabeth II's 80th birthday.[42]
+
+The fifth film in the Harry Potter franchise, Harry Potter and the Order of the Phoenix, was released in 2007. A huge financial success, the film set a record worldwide opening-weekend gross of $332.7 million.[43] Watson won the inaugural National Movie Award for Best Female Performance.[44] As the fame of the actress and the series continued, Watson and fellow Harry Potter co-stars Daniel Radcliffe and Rupert Grint left imprints of their hands, feet and wands in front of Grauman's Chinese Theatre in Hollywood on 9 July 2007.[45]
+By July 2007, Watson's work in the Harry Potter series was said to have earned her more than £10 million, and she acknowledged she would never have to work for money again.[6] In March 2009, she was ranked 6th on the Forbes list of "Most Valuable Young Stars",[46] and in February 2010, she was named as Hollywood's highest paid female star, having earned an estimated £19 million in 2009.[47]
+Despite the success of Order of the Phoenix, the future of the Harry Potter franchise became surrounded in doubt, as all three lead actors were hesitant to sign on to continue their roles for the final two episodes.[48] Radcliffe eventually signed for the final films on 2 March 2007,[48] but Watson was considerably more hesitant.[49] She explained that the decision was significant, as the films represented a further four-year commitment to the role, but eventually conceded that she "could never let [the role of] Hermione go",[50] signing for the role on 23 March 2007.[51]</p>
+  </div>
+</div>
+
+
       </div>
     </div>
   </div>
 </div>
+
+
 </div>
 
+<!-- Script for modal windows -->
+<!--  <script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+</script> -->
+
+<script>
+function clickbutton() {
+  var modal = document.getElementById('myModal');
+  modal.style.display = "block";
+}
+
+function closemodal() {
+  var span = document.getElementsByClassName("close")[0];
+  var modal = document.getElementById('myModal');
+  modal.style.display = "none";
+}
+</script>
 
 </body>
 </html>
