@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Gender Inequality</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+  body {
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #000000;
+  }
+  p {
+    font-size: 16px;
+  }
+  
+  .navbar {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+      color: #1abc9c !important;
+  }
+  .datapage {
+      padding-top: 50px;
+      padding-left: 50px;
+  }
+.button {
+    font: 16px Montserrat;
+    background-color: #B85858;
+    border: none;
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 50px;
+    margin-left: 75px ;
+}
+
+}
+
+</style>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Mushrooms', 3],
+          ['Onions', 1],
+          ['Olives', 1],
+          ['Zucchini', 1],
+          ['Pepperoni', 2]
+        ]);
+
+        // Set chart options
+        var options = {'title':'How Much Pizza I Ate Last Night',
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+</head>
+<body>
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">ABOUT</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="web1.html">HOME</a></li>
+        <li><a href="web3.html">STORIES</a></li>
+        <li><a href="web2.html">DATA</a></li>
+        <li><a href="#">CONTACT</a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Second Container -->
+<div class="datapage">
+
+<div>
+<p id="first">
+Select a category:
+
+<select > 
+    <option> Education </option>
+    <option> Employment </option>
+    <option> Violence </option>
+
+    </select>
+    </p>
+
+<script>
+
+$(document).ready(function(){
+      $("#second").hide();
+    $("#a1").click(function(){
+        $("#second").show();
+    });
+    $("#a1").click(function(){
+    $("#second").animate({
+        left: '250px',
+        height: '+=150px',
+        width: '+=150px'
+    });
+}); 
+});
+</script>    
+
+<p id = "second">
+Select a category:
+<select> 
+    this is a list
+    <option> one </option>
+    <option> two </option>
+    <option> three </option>
+
+    </select>
+    </p>
+
+<button id="a1" class="button">Next</button>
+</div>
+
+
+<div id="chart_div"></div>
+
+
+
+
+</body>
+</html>
