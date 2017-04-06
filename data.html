@@ -15,7 +15,6 @@
   body {
       font: 20px Montserrat, sans-serif;
       line-height: 1.8;
-      color: #f5f6f7;
   }
   p {
   	font-size: 16px;
@@ -34,36 +33,56 @@
       color: #1abc9c !important;
   }
 
-  #questionsArea {
+  #overall {
     height: 100%;
-    width: 28%;
+    width: 100%;
+    margin: 2px;
+  }
+
+  #questionsArea {
+    height: auto;
+    width: 30%;
     float: left;
     border: 1px solid green;
     margin-right: 5px;
-    color: red;
+  }
+
+  #chartArea {
+    height: 100%;
+    width: 69%;
+    float: left;
+    border: 1px solid red;
+    text-align: center;
   }
 
   #category {
     border: 1px solid purple;
     margin: 3px;
+    width: auto;
+    height: auto;
+    position: relative;
   }
 
   #beforePerception {
     border: 1px solid darkblue;
     margin: 3px;
+    height: auto;
+    width: auto;
   }
 
   #afterPerception {
     border: 1px solid orange;
     margin: 3px;
+    height: auto;
+    width: auto;
   }
 
-  #chartArea {
-    height: 100%;
-    width: 65%;
-    float: left;
-    border: 1px solid red;
-    color: blue;
+  #questionsBtn {
+    position: relative;
+    margin: 2px;
+    display: inline-block;
+    text-align: center;
+    right: 0;
   }
 
 </style>
@@ -97,13 +116,47 @@
 <div id="overall">
   <!-- Start of Chart criteria selection section -->
   <div id="questionsArea">
-    <div id="category">hello</div>
-    <div id="beforePerception">byte</div>
-    <div id="afterPerception">daiskue</div>
+    <div id="category">
+      <label style="margin-right:2px;">Category: </label>
+      <select name="categoryDD"> 
+        <option value="violence">Violence</option>
+        <option value="salaries">Salaries</option>
+        <option value="leadership">Leadership</option>
+      </select><br>
+
+      <label style="margin-right:2px;">Type: </label>
+      <select name="typeDD"> 
+        <option value="domestic">Domestic</option>
+        <option value="sexual">Sexual</option>
+      </select><br>
+
+      <label style="margin-right:2px;">Country: </label>
+      <select name="countryDD"> 
+        <option value="singapore">Singapore</option>
+        <option value="malaysia">Malaysia</option>
+        <option value="india">India</option>
+      </select><br>
+
+      <button id="questionsBtn">Show Stats!</button>
+    </div>
+    <!-- End of category div -->
+
+    <div id="beforePerception">
+      <label style="margin-right:2px;">Q1: What is your perception of the amount of women facing domestic violence in Singapore?</label>
+      <select name="typeDD"> 
+        <option value="1">Less than 10%</option>
+        <option value="2">10% - 20%</option>
+        <option value="3">21% - 30%</option>
+      </select><br>
+    </div>
+    <!-- End of beforePerception div -->
+
+    <div id="afterPerception">after chart is shown</div>
+    <!-- End of afterPerception div -->
   </div> 
   <!-- End of questions Area -->
 
-  <div id="chartArea">hello</div> 
+  <div id="chartArea"><label style="position: center;">Chart goes here</label></div> 
   <!-- End of chartArea -->
 </div>
 <!-- Start of overall -->
