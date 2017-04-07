@@ -11,18 +11,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+  <!-- Our own files -->
   <link href="OVERALL.css" type="text/css" rel="stylesheet">
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loaderW.js"></script>
   <script type="text/javascript" src="dataPageJS.js"></script>
-
-  <style>
-  
-
-</style>
 
 </head>
 <body>
-
 <!-- Navbar -->
 <nav class="navbar navbar-default">
   <div class="container">
@@ -53,12 +48,12 @@
       <label style="margin-right:2px;">Category: </label>
       <select name="categoryDD"> 
         <option value="violence">Violence</option>
-        <option value="salaries">Salaries</option>
+        <option value="salaries" selected="true">Salaries</option>
         <option value="leadership">Leadership</option>
       </select><br>
 
       <label style="margin-right:2px;">Type: </label>
-      <select name="typeDD"> 
+      <select name="typeDD" id="typeDD"> 
         <option value="domestic">Domestic</option>
         <option value="sexual">Sexual</option>
       </select><br>
@@ -70,7 +65,7 @@
         <option value="india">India</option>
       </select><br>
 
-      <button id="questionsBtn">Show Stats!</button>
+      <button id="questionsBtn" onclick="btnSubmit()">Show Stats!</button>
     </div>
     <!-- End of category div -->
 
