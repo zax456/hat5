@@ -46,36 +46,26 @@
   <div id="questionsArea">
     <div id="category">
       <label style="margin-right:2px;">Category: </label>
-      <select name="categoryDD"> 
-        <option value="violence">Violence</option>
-        <option value="salaries" selected="true">Salaries</option>
-        <option value="leadership">Leadership</option>
+      <select name="categoryDD" id="categoryDD" onchange="displayAccordingly()"> 
+        <option value="violence" selected="true">Violence</option>
+        <option value="employment">Employment</option>
+        <option value="education">Education</option>
       </select><br>
 
-      <label style="margin-right:2px;">Type: </label>
-      <select name="typeDD" id="typeDD"> 
-        <option value="domestic">Domestic</option>
-        <option value="sexual">Sexual</option>
-      </select><br>
+      <div id="typeDiv">
+        <label style="margin-right:2px;">Type: </label>
+      </div>
 
-      <label style="margin-right:2px;">Country: </label>
-      <select name="countryDD"> 
-        <option value="singapore">Singapore</option>
-        <option value="malaysia">Malaysia</option>
-        <option value="india">India</option>
-      </select><br>
+      <div id="countryDiv">
+        <label style="margin-right:2px;">Country: </label>
+      </div>
 
       <button id="questionsBtn" onclick="btnSubmit()">Show Stats!</button>
     </div>
     <!-- End of category div -->
 
     <div id="beforePerception">
-      <label style="margin-right:2px;">Q1: What is your perception of the amount of women facing domestic violence in Singapore?</label>
-      <select name="typeDD"> 
-        <option value="1">Less than 10%</option>
-        <option value="2">10% - 20%</option>
-        <option value="3">21% - 30%</option>
-      </select><br>
+      <label id="beforePerceptionLbl" style="margin:3px;"></label>
     </div>
     <!-- End of beforePerception div -->
 
