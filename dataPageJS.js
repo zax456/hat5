@@ -11,17 +11,18 @@ var typeEmployment = ["Leadership", "Salary"];
 var typeEducation = ["Literacy", "Skills"];
 
 var violencePhysicalcountries = ["China", "India", "Japan", "Singapore"];
-//var violenceSexualcountries = ["China", "India", "Japan", "Singapore"];
 var employmentLeadershipcountries = ["China", "Japan", "Singapore"]; 
-//var employmentSalarycountries = ["China", "Japan", "Singapore"];
 var educationLiteracycountries = ["India", "Singapore"];
-//var educationSkillscountries = ["India", "Singapore"];
 
-var beforeViolenceDomestic = "Q1: What do you think is the percentage of women suffering from domestic violence in Singapore?"
-var beforeViolenceSexual = "Q1: What is your perception of sexual violence in Singapore?"
-var beforeEmployment = "Q1: What is your perception of women employment status in Singapore?"
+var beforeViolence = ["Q1: Who do you think has a higher chance of being violated?"];
+var beforeEmployment = ["Q1: Who would you prefer to be your supervisor?", "Q2: Do you think it matters what gender your superior is?"];
+var beforeEducation = ["Q1: Which gender do you think will fare better in arts?"];
+var beforePerception = ["Q1: What do you think of a female who does not shave?", "Q2: Do you believe that the world is able to achieve gender equality?"];
 
-var pencentageArr = ["Below 10%", "11% - 30%", "31% - 50%", "51% - 70%", "Above 70%"];
+var beforeViolenceOpts = ["Childen", "Women", "Men", "Anyone", "Elderly"];
+var beforeEducationOpts = ["Male", "Female"];
+var beforeEmploymentOpts = [["Female", "Male", "Either"], ["Yes", "No"]];
+var beforePerceptionOpts = [["Gross", "It's fine", "Everybody can do what they want"], ["Yes", "No"]];
 
 var created = 0;
 function displayAccordingly() {
@@ -159,40 +160,157 @@ function removeDropCountry() {
 	d.removeChild(oldmenu);
 }
 
-function displayBeforeAccordingly(catType) {
-	switch(catType) {
-		case "violencePhysical": 
-			//Create the new question
-			var getLabel = document.getElementById("beforePerceptionLbl");
-			getLabel.innerHTML = beforeViolenceDomestic;
+function removeDropBefore() {
+	var d = document.getElementById('beforePerception');
 
-			var whereToPut = document.getElementById('beforePerception');
-			var newRadio = document.createElement("label");
-			newRadio.innerHTML = '<input type="radio" name="percentage" value="1" style="margin:3px;">' + pencentageArr[0];
-			whereToPut.appendChild(newRadio);
-			//need to destroy the old radio btn if user change category TO DO
-			break;
+	var oldmenu = document.getElementById('beforeDD');
 
-		case "violenceSexual": 
-			break;
-
-		case "employmentLeadership" :
-			break;
-
-		case "employmentSalary": 
-			break;
-
-		case "educationLiteracy": 
-			break;
-
-		case "educationSkills" :
-			break;
-	}
+	d.removeChild(oldmenu);
 }
 
-function btnSubmit() {
+var createdBefore = 0;
+function displayBeforeAccordingly(catType) {
+	if (createdBefore == 1) {
+		removeDropBefore();
+	}
+
+	var mainMenu = document.getElementById("beforePerception");
+
+	//Create the new dropdown menu
+	var whereToPut = document.getElementById('beforePerception');
+	var newDropdown = document.createElement('div');
+	newDropdown.setAttribute('id',"beforeDD");
+	newDropdown.setAttribute("name", "beforeDD");
+	whereToPut.appendChild(newDropdown);
+
+	catType = catType.split(" ")[0];
+	switch(catType) {
+		case "violence": 
+			var j = 0;
+			//Create the new question
+			//for how many questions i have in my array (N), do these steps N times
+			for(var i=0; i<beforeViolence.length; i++) {
+				//create the label
+				var label = document.createElement('label');
+				label.innerHTML = beforeViolence[i];
+				newDropdown.appendChild(label);
+
+				//create options
+				var DD = document.createElement('select');
+				DD.setAttribute("id", beforeViolence[i]);
+				DD.setAttribute("name", beforeViolence[i]);
+
+				for(; j<beforeViolenceOpts.length; j++) {
+
+					if(Array.isArray(beforeViolenceOpts[j])) { //if there are mulitple questions, store each Q's opts as an array
+						for(var k=0; k<beforeViolenceOpts[j].length; k++) {
+							var option = document.createElement('option'); //to store each options in DD
+							option.setAttribute("value", beforeViolenceOpts[j][k]);
+							option.innerHTML = beforeViolenceOpts[j][k];
+							DD.appendChild(option);
+						}
+						j++;
+						break;
+					} else {
+						var option = document.createElement('option'); //to store each options in DD
+							option.setAttribute("value", beforeViolenceOpts[j]);
+							option.innerHTML = beforeViolenceOpts[j];
+							DD.appendChild(option);
+					}
+					
+				}
+				var breakline = document.createElement('p'); //to create space in between questions
+				newDropdown.appendChild(DD);
+				newDropdown.appendChild(breakline);
+			}
+			break;
+
+		case "employment" :
+			var j = 0;
+			for(var i=0; i<beforeEmployment.length; i++) {
+				//create the label
+				var label = document.createElement('label');
+				label.setAttribute("style", "margin:3px;");
+				label.innerHTML = beforeEmployment[i];
+				newDropdown.appendChild(label);
+
+				//create options
+				var DD = document.createElement('select');
+				DD.setAttribute("id", beforeEmployment[i]);
+				DD.setAttribute("name", beforeEmployment[i]);
+				DD.setAttribute("style", "margin:3px;");
+
+				for(; j<beforeEmploymentOpts.length; j++) {
+
+					if(Array.isArray(beforeEmploymentOpts[j])) { //if there are mulitple questions, store each Q's opts as an array
+						for(var k=0; k<beforeEmploymentOpts[j].length; k++) {
+							var option = document.createElement('option'); //to store each options in DD
+							option.setAttribute("value", beforeEmploymentOpts[j][k]);
+							option.innerHTML = beforeEmploymentOpts[j][k];
+							DD.appendChild(option);
+						}
+						j++;
+						break;
+					} else {
+						var option = document.createElement('option'); //to store each options in DD
+							option.setAttribute("value", beforeEmploymentOpts[j]);
+							option.innerHTML = beforeEmploymentOpts[j];
+							DD.appendChild(option);
+					}
+					
+				}
+				var breakline = document.createElement('p'); //to create space in between questions
+				newDropdown.appendChild(DD);
+				newDropdown.appendChild(breakline);
+			}
+			break;
+
+		case "education": 
+			var j = 0;
+			for(var i=0; i<beforeEducation.length; i++) {
+				//create the label
+				var label = document.createElement('label');
+				label.setAttribute("style", "margin:3px;");
+				label.innerHTML = beforeEducation[i];
+				newDropdown.appendChild(label);
+
+				//create options
+				var DD = document.createElement('select');
+				DD.setAttribute("id", beforeEducation[i]);
+				DD.setAttribute("name", beforeEducation[i]);
+				DD.setAttribute("style", "margin:3px;");
+
+				for(; j<beforeEducationOpts.length; j++) {
+
+					if(Array.isArray(beforeEducationOpts[j])) { //if there are mulitple questions, store each Q's opts as an array
+						for(var k=0; k<beforeEducationOpts[j].length; k++) {
+							var option = document.createElement('option'); //to store each options in DD
+							option.setAttribute("value", beforeEducationOpts[j][k]);
+							option.innerHTML = beforeEducationOpts[j][k];
+							DD.appendChild(option);
+						}
+						j++;
+						break; 
+					} else {
+						var option = document.createElement('option'); //to store each options in DD
+							option.setAttribute("value", beforeEducationOpts[j]);
+							option.innerHTML = beforeEducationOpts[j];
+							DD.appendChild(option);
+					}
+					
+				}
+				var breakline = document.createElement('p'); //to create space in between questions
+				newDropdown.appendChild(DD);
+				newDropdown.appendChild(breakline);
+			}
+			break;
+	}
+	createdBefore = 1;
+}
+
+function categoryTypebtnSubmit() {
 	var value = document.getElementById("categoryDD").value; 
-	value += document.getElementById("typeDD").value;
+	value += " " + document.getElementById("typeDD").value;
 	console.log(value);
 	displayBeforeAccordingly(value);
 }
