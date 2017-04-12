@@ -1,7 +1,7 @@
 //Load the Visualization API and the corechart package.
 
 $(document).ready(function() {
-	displayAccordingly();
+	displayCategoryAccordingly();
 	displayCountriesAccordingly();
 	google.charts.load('current', {'packages':['corechart']});
 });
@@ -25,7 +25,7 @@ var beforeEmploymentOpts = [["Female", "Male", "Either"], ["Yes", "No"]];
 var beforePerceptionOpts = [["Gross", "It's fine", "Everybody can do what they want"], ["Yes", "No"]];
 
 var created = 0;
-function displayAccordingly() {
+function displayCategoryAccordingly() {
 	if (created == 1) {
 		removeDrop();
 	}
@@ -166,6 +166,19 @@ function removeDropBefore() {
 	var oldmenu = document.getElementById('beforeDD');
 
 	d.removeChild(oldmenu);
+}
+
+function removeDropChart() {
+	var d = document.getElementById('chartArea');
+
+	var oldmenu = document.getElementById('chartDiv');
+
+	d.removeChild(oldmenu);
+
+	var newmenu = document.createElement('div');
+	newmenu.setAttribute('id', 'chartDiv');
+
+	d.appendChild(newmenu)
 }
 
 var createdBefore = 0;
@@ -313,4 +326,99 @@ function categoryTypebtnSubmit() {
 	value += " " + document.getElementById("typeDD").value;
 	console.log(value);
 	displayBeforeAccordingly(value);
+
+	var graph = value + " " + document.getElementById("countryDD").value;
+	drawChart(graph);
 }
+
+var createdChart = 0;
+function drawChart(category) {
+	if (createdChart == 1) {
+		removeDropChart();
+		createdChart = 0;
+	}
+  switch(category) {
+    case "violence Physical Singapore":
+    	var numOfGraphs = 3;
+    	var graphsURL = ["https://docs.google.com/spreadsheets/d/1uhh7d5oAUXaQMX7SeqrCC39DCHkLwDdh_s_HQ34ny7o/gviz/tq?range=A:B", "https://docs.google.com/spreadsheets/d/1UtWiiUXKtLmXRcJiXISE6qlrDTYyeKAvMammsVjZd0A/gviz/tq?range=A1:D6", "https://docs.google.com/spreadsheets/d/1B1iGs7YlxE7unDMc3xD-r5iVvEV6J8dUW-zX0NrI1ag/gviz/tq?range=A:B"];
+      //draw data from google spreadsheet to create graph 
+      for(var i = 0; i<numOfGraphs; i++) {
+      	var q = new google.visualization.Query(graphsURL[i]);
+      	q.send(handleQueryResponse2);
+      }
+      createdChart = 1;
+      break;
+
+    case "violence Physical Japan": 
+    	var graphsURL = "https://docs.google.com/spreadsheets/d/1Kg-otTTr5ZbSolu5-CnubXnb1qol5-jicfFhF5MfI3k/gviz/tq?range=A:B";
+    	var q = new google.visualization.Query(graphsURL);
+    	q.send(handleQueryResponse2);
+
+    case "violence Physical ": 
+    	createdChart = 1;
+      break;
+
+    case "leadership":
+      createdChart = 1;
+      break;
+  }
+}
+
+function handleQueryResponse2(response) {
+	//for debugging purpose
+	if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+
+    var data = response.getDataTable();
+    var areaToAppendChart = document.getElementById("chartDiv");
+    var helper = document.createElement('div');
+    helper.setAttribute('style', 'width:100%; height:100%;');
+
+
+    var chart = new google.visualization.ColumnChart(helper);
+    // Set chart options
+    var options = {'width': 860, 'height': '400', pieSliceText:'percentage','backgroundColor': 'lightblue'};
+    chart.draw(data, options);
+    areaToAppendChart.appendChild(helper);
+  } 
+
+// OLD GRAPH functions (ignore the below 2 functions)
+function readGoogleSheet(url) {
+  $.get({
+        url: url,
+        success: function(response) {
+          console.log(response.feed.entry);
+          var arr = response.feed.entry; 
+          var titleArr = new Array(); //to store the different age groups 
+          var contentArr = new Array(); //to store the percentage for each group
+          for(var i=0; i<arr.length; i++) { 
+            var eachRowTitle = arr[i].title.$t; //get the age group 
+            var eachRowContent = arr[i].content.$t; //get the % 
+            eachRowContent = eachRowContent.split(":");
+
+            titleArr.push(eachRowTitle); //add age group to titleArr
+            contentArr.push(eachRowContent[1].trim()); //add % to contentArr
+          }
+
+          //format Arrays to dataTable 
+          var dataTable = google.visualization.arrayToDataTable([
+            ['Abuse', 'Percentage'], 
+            [titleArr[0], Number(contentArr[0])],
+            [titleArr[1], Number(contentArr[1])]
+            ]);
+          handleQueryResponse(dataTable);
+        }
+      });
+}
+
+function handleQueryResponse(dataTable) {
+    var data = dataTable;
+    var chart = new google.visualization.PieChart(document.getElementById('chartArea'));
+    // Set chart options
+      var options = {'title':'Percentage of women abuse in Singapore',
+                     'backgroundColor': 'lightblue'
+                     };
+    chart.draw(data, options);
+  }

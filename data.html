@@ -8,12 +8,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <!-- Our own files -->
   <link href="OVERALL.css" type="text/css" rel="stylesheet">
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loaderW.js"></script>
   <script type="text/javascript" src="dataPageJS.js"></script>
 
 </head>
@@ -73,7 +74,9 @@
   </div> 
   <!-- End of questions Area -->
 
-  <div id="chartArea"><label style="position: center;">Chart goes here</label></div> 
+  <div id="chartArea">
+    <div id="chartDiv"></div>
+  </div> 
   <!-- End of chartArea -->
 </div>
 <!-- End of overall -->
