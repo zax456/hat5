@@ -191,10 +191,11 @@ function displayBeforeAccordingly(catType) {
 
 	//Create the new dropdown menu
 	var whereToPut = document.getElementById('beforePerception');
-	var newDropdown = document.createElement('div');
+	var newDropdown = document.createElement('form');
 	newDropdown.setAttribute('id',"beforeDD");
-	newDropdown.setAttribute("name", "beforeDD");
-	whereToPut.appendChild(newDropdown);
+	newDropdown.setAttribute("method", "POST");
+	newDropdown.setAttribute("action", 
+		"https://script.google.com/macros/s/AKfycbyWzLkLO4oTg8JT6CGtejsrIePfIb3zPkd6SG2IOLTQrx9lgg-F/exec");
 
 	catType = catType.split(" ")[0];
 	switch(catType) {
@@ -211,13 +212,14 @@ function displayBeforeAccordingly(catType) {
 				//create options
 				var DD = document.createElement('select');
 				DD.setAttribute("id", beforeViolence[i]);
-				DD.setAttribute("name", beforeViolence[i]);
+				DD.setAttribute("name", "Reaction");
 
 				for(; j<beforeViolenceOpts.length; j++) {
 
 					if(Array.isArray(beforeViolenceOpts[j])) { //if there are mulitple questions, store each Q's opts as an array
 						for(var k=0; k<beforeViolenceOpts[j].length; k++) {
 							var option = document.createElement('option'); //to store each options in DD
+							option.setAttribute("name", "Reaction");
 							option.setAttribute("value", beforeViolenceOpts[j][k]);
 							option.innerHTML = beforeViolenceOpts[j][k];
 							DD.appendChild(option);
@@ -226,6 +228,7 @@ function displayBeforeAccordingly(catType) {
 						break;
 					} else {
 						var option = document.createElement('option'); //to store each options in DD
+							option.setAttribute("name", "Reaction");
 							option.setAttribute("value", beforeViolenceOpts[j]);
 							option.innerHTML = beforeViolenceOpts[j];
 							DD.appendChild(option);
@@ -236,6 +239,11 @@ function displayBeforeAccordingly(catType) {
 				newDropdown.appendChild(DD);
 				newDropdown.appendChild(breakline);
 			}
+			whereToPut.appendChild(newDropdown);
+			var btn = document.createElement("input");
+			btn.setAttribute("type", "submit")
+			btn.innerHTML = "Submit";
+			newDropdown.appendChild(btn);
 			break;
 
 		case "employment" :
@@ -276,6 +284,11 @@ function displayBeforeAccordingly(catType) {
 				newDropdown.appendChild(DD);
 				newDropdown.appendChild(breakline);
 			}
+			whereToPut.appendChild(newDropdown);
+			var btn = document.createElement("input");
+			btn.setAttribute("type", "submit")
+			btn.innerHTML = "Submit";
+			newDropdown.appendChild(btn);
 			break;
 
 		case "education": 
@@ -316,6 +329,11 @@ function displayBeforeAccordingly(catType) {
 				newDropdown.appendChild(DD);
 				newDropdown.appendChild(breakline);
 			}
+			whereToPut.appendChild(newDropdown);
+			var btn = document.createElement("input");
+			btn.setAttribute("type", "submit")
+			btn.innerHTML = "Submit";
+			newDropdown.appendChild(btn);
 			break;
 	}
 	createdBefore = 1;
