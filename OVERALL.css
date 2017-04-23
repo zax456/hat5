@@ -12,13 +12,15 @@
   }
 
   .navbar {
-      padding-top: 5px;
-      padding-bottom: 5px;
+      top:0;
       border: 0;
       border-radius: 0;
       margin-bottom: 0;
       font-size: 12px;
       letter-spacing: 5px;
+      position: fixed; 
+      z-index: 1;
+      width:100%;
   }
   
   .navbar-nav  li a:hover {
@@ -29,6 +31,7 @@
     height: 100%;
     width: 100%;
     margin: 2px;
+    padding-top:70px;
   }
 
   #questionsArea {

@@ -16,6 +16,9 @@
       margin-bottom: 0;
       font-size: 12px;
       letter-spacing: 5px;
+      position: fixed; 
+      z-index: 1;
+      width:100%;
   }
   .navbar-nav  li a:hover {
       color: #1abc9c !important;
