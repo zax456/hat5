@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -273,3 +274,280 @@ window.onclick = function(event) {
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Gender Inequality</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+  body {
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #f5f6f7;
+  }
+  p {
+    font-size: 16px;
+  }
+
+  .navbar {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+      color: #1abc9c !important;
+  }
+
+  .row {
+      padding-top: 10px;
+      padding-left: 50px;
+  }
+
+  .allstories {
+    width: 75%;
+    height: 75px;
+    margin-left: 25%;
+    margin-right: auto;
+    margin-top: 2%;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #008040;
+    overflow: hidden;
+  }
+
+  #subDiv1, #subDiv2, #subDiv3
+{
+    width: 25%;
+    height: 75px;
+    border-width: 1px;
+    border-color: #000;
+    border-style: solid;
+}
+#subDiv1
+{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    float: left;
+    margin-left: 0%;
+}
+#subDiv2
+{
+    float: left;
+    margin-left: 25%;
+}
+#subDiv3
+{
+    float: left;
+    margin-left: 50%;
+}
+
+#overlay {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" >STORIES</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="stories.html">STORIES</a></li>
+        <li><a href="data.html">DATA</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Three screens of stories -->
+
+<div id="allstories">
+
+<div class="story1">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2014/7/30/1406725485371/9bcc9d35-45af-40ff-a9d2-61c4462a7bbd-2060x1236.jpeg?w=620&q=20&auto=format&usm=12&fit=max&dpr=2&s=f5cba8057f8150ca95e29a7b818ed064" width="500" height="500">
+      <div class="caption">
+        <h3>Erin</h3>
+
+        <p>Pay difference: $20,000</p>
+        
+        <button id="myBtn" class="btn btn-primary"  onclick="clickbutton1()">Read More</button>
+
+<!-- The Modal -->
+<div id="myModal1" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+<div class="w3-panel w3-card-4 w3-center">
+    <span style="font-size:100px">❝</span><br>
+      <p style="margin-top:-60px">
+    I knew for a while that others were paid at a higher rate compared to me. I just accepted that and I don’t really know why. I guess I thought I just wasn’t as good and others were slightly more experienced. I am an engineer and have a masters degree in my subject (and a lot of student debt to go with it), this is necessary for my job role, and this is my first company after graduating. I am the only female engineer.</br></br>
+
+    Others in the same role as me were less qualified, studying part time and having their fees paid for by the company, and also getting at least 1 day per week study leave. It was when I found out that their study day was not unpaid but paid at their normal day rate that I got angry and upset. I was fully qualified working 5 days a week. They were unqualified, earning 50% more than me and working only 4 days per week. 
+    </br></br>
+    I asked for a raise to match the others’ day rates. I stated my case and said it was not fair and that I would leave if it was not resolved. I was nearly fobbed off with a much smaller raise but I said again that I would not take anything less than being equal to the men.</p>
+</div>
+</div>
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="story2">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="http://havenhousefsc.com/wp-content/uploads/2016/05/domestic-violence.jpg" width="500" height="500">
+      <div class="caption">
+        <h3>Katherine</h3>
+        <p>Domestic violence</p>
+
+        <button id="myBtn" class="btn btn-primary"  onclick="clickbutton2()">Read More</button>
+
+<!-- The Modal -->
+<div id="myModal2" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+  <div class="w3-panel w3-card-4 w3-center">
+    <span style="font-size:100px">❝</span><br>
+    <p style="margin-top:-60px">
+    I lived in a violent marriage for years. I was very naive at first and really didnt know people like him existed. He would kick me, slap me, push me, trip me over, throw things at me, stand on my feet, yell abuse, call me names like ‘social cripple’, the list goes on and on, but he never punched me.</br></br>
+    In fact he would say to people that he couldnt stand ‘wife bashers’. He would tell me that he didn’t want the children to play with so and so's children because they were a bad influence. He tried to isolate us from all those who loved us and new people we met would go through character assasinations by him.</br></br>
+    Life was continous hell, fear and horror and he always blamed the children or me for his violence. Things got a lot worse towards the end. He would threaten to run us all off the road in the car and kill us. The violence became a daily occurance if not several episodes a day.</br></br>
+    When his violence became much worse and was being directed at the children I changed. I began to read about self esteem and positive affirmations. I contacted a friend I used to know who worked in a Woman’s Centre and speaking to her made me realise we were not alone. Finally I began to see the reality of what was happening. When we left I believed he was going to kill us.</p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="story3">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="http://www.radionz.co.nz/assets/news/12691/eight_col_Childabuse.jpg?1391054261" width="500" height="400">
+      <div class="caption">
+        <h3>Sarita</h3>
+        <p>Neglect</p>
+
+        <button id="myBtn" class="btn btn-primary" onclick="clickbutton3()">Read More</button>
+
+<!-- The Modal -->
+<div id="myModal3" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+  <div class="w3-panel w3-card-4 w3-center">
+    <span style="font-size:100px">❝</span><br>
+    <p style="margin-top:-60px">
+
+    Since my parents did not have a son, they exchanged me for a boy. They adopted my cousin as their own son and moved to Scandinavia leaving me behind at my aunt’s house where I was treated virtually as a slave by my aunt. No one adopted me as their daughter and my birth was not registered. As a girl I had to work hard to earn the right to eat and to survive. I don’t remember when I was exchanged at age 2 or 3, however, I remember very well when I was only 4 and 5 and how I was told to wash the floor, wash around the animals, do the dishes and bring the water. I remember how my aunt hit me if I did not do things right. I was told by my aunt and her children that I had to serve their family because they had offered their son to my parents.</br></br>
+
+    I did not know who my real mother was until I was 9 years old. Then she and her husband came to India to show their new born son they finally got after worthless daughters. My mother did not show me love, care  or attention.  She was just busy with her newborn son. I waited for this man from Europe, who was my real father, and this woman from Europe, who was my real mother to talk to me when I saw them first time, but neither of them seemed to care.  That was my first meeting with my parents.</p>
+    </div>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<script>
+
+var modal1 = document.getElementById('myModal1');
+var modal2 = document.getElementById('myModal2');
+var modal3 = document.getElementById('myModal3');
+
+function clickbutton1() {
+  modal1.style.display = "block";
+}
+
+function clickbutton2() {
+  modal2.style.display = "block";
+}
+
+function clickbutton3() {
+  modal3.style.display = "block";
+}
+window.onclick = function(event) {
+    if (event.target == modal1 || event.target==modal2 || event.target==modal3) {
+        modal1.style.display = "none";
+        modal2.style.display = "none";
+        modal3.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
+>>>>>>> 51ab75e84e40a5298b3e9159752e5c9bf4c61418

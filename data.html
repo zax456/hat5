@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,3 +84,90 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Gender Inequality</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- Our own files -->
+  <link href="OVERALL.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript" src="dataPageJS.js"></script>
+
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" >DATA</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="stories.html">STORIES</a></li>
+        <li><a href="data.html">DATA</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav> 
+<!-- End of Navbar -->
+
+<div id="overall">
+  <!-- Start of Chart criteria selection section -->
+  <div id="questionsArea">
+    <div id="category">
+      <label style="margin-right:2px;">Category: </label>
+      <select name="categoryDD" id="categoryDD" onchange="displayCategoryAccordingly()"> 
+        <option value="violence" selected="true">Violence</option>
+        <option value="employment">Employment</option>
+        <option value="education">Education</option>
+      </select><br>
+
+      <div id="typeDiv">
+        <label style="margin-right:2px;">Type: </label>
+      </div>
+
+      <div id="countryDiv">
+        <label style="margin-right:2px;">Country: </label>
+      </div>
+
+      <button id="questionsBtn" onclick="categoryTypebtnSubmit()">Show Stats!</button>
+    </div>
+    <!-- End of category div -->
+
+    <div id="beforePerception">
+    </div>
+    <!-- End of beforePerception div -->
+
+    <div id="afterPerception">after chart is shown</div>
+    <!-- End of afterPerception div -->
+  </div> 
+  <!-- End of questions Area -->
+
+  <div id="chartArea">
+    <div id="chartDiv"></div>
+  </div> 
+  <!-- End of chartArea -->
+</div>
+<!-- End of overall -->
+
+</body>
+</html>
+>>>>>>> 51ab75e84e40a5298b3e9159752e5c9bf4c61418

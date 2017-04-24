@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <style>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
@@ -77,4 +78,88 @@
     text-align: center;
     right: 0;
   }
+=======
+<style>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+  body {
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #f5f6f7;
+  }
+
+  p {
+  	font-size: 16px;
+  }
+
+  .navbar {
+      top:0;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+      position: fixed; 
+      z-index: 1;
+      width:100%;
+  }
+  
+  .navbar-nav  li a:hover {
+      color: #1abc9c !important;
+  }
+
+  #overall {
+    height: 100%;
+    width: 100%;
+    margin: 2px;
+    padding-top:70px;
+  }
+
+  #questionsArea {
+    height: auto;
+    width: 30%;
+    float: left;
+    border: 1px solid green;
+    margin-right: 5px;
+  }
+
+  #chartArea {
+    height: 100%;
+    width: 69%;
+    float: left;
+    border: 1px solid red;
+    text-align: center;
+    overflow: auto;
+  }
+
+  #category {
+    border: 1px solid purple;
+    margin: 3px;
+    width: auto;
+    height: auto;
+    position: relative;
+  }
+
+  #beforePerception {
+    border: 1px solid darkblue;
+    margin: 3px;
+    height: auto;
+    width: auto;
+  }
+
+  #afterPerception {
+    border: 1px solid orange;
+    margin: 3px;
+    height: auto;
+    width: auto;
+  }
+
+  #questionsBtn {
+    position: relative;
+    margin: 2px;
+    display: inline-block;
+    text-align: center;
+    right: 0;
+  }
+>>>>>>> 51ab75e84e40a5298b3e9159752e5c9bf4c61418
 </style>
