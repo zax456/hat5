@@ -11,7 +11,7 @@ var typeEmployment = ["Leadership", "Salary"];
 var typeEducation = ["Literacy", "Skills"];
 
 var violencePhysicalcountries = ["India", "Japan", "Singapore"];
-var employmentLeadershipcountries = ["China", "Japan", "Singapore"]; 
+var employmentLeadershipcountries = ["China", "Japan", "Singapore"];
 var educationLiteracycountries = ["Singapore"];
 
 var beforeViolence = ["Q1: Who do you think has a higher chance of being violated?"];
@@ -41,7 +41,7 @@ function displayCategoryAccordingly() {
 	newDropdown.setAttribute("onchange", "displayCountriesAccordingly()")
 	whereToPut.appendChild(newDropdown);
 
-	if (mainMenu.value == "employment") { 
+	if (mainMenu.value == "employment") {
 		var counter = 0;
 		for(; counter<typeEmployment.length; counter++) {
 			if(counter == 0) {
@@ -56,10 +56,10 @@ function displayCategoryAccordingly() {
 				optionPublic.value = typeEmployment[counter];
 				newDropdown.add(optionPublic,newDropdown.options[null]);
 			}
-			
+
 		}
 
-	} else if (mainMenu.value == "violence") { 
+	} else if (mainMenu.value == "violence") {
 		var counter = 0;
 		for(; counter<typeViolence.length; counter++) {
 			if(counter == 0) {
@@ -76,9 +76,9 @@ function displayCategoryAccordingly() {
 			}
 
 		}
-	} else if (mainMenu.value == "education") { 
+	} else if (mainMenu.value == "education") {
 		var counter = 0;
-		for(; counter<typeViolence.length; counter++) { 
+		for(; counter<typeViolence.length; counter++) {
 			if(counter == 0) {
 				var optionPublic=document.createElement("option");
 				optionPublic.text = typeEducation[counter];
@@ -150,7 +150,7 @@ function removeDrop() {
 	var oldmenu = document.getElementById('typeDD');
 
 	d.removeChild(oldmenu);
-} 
+}
 
 function removeDropCountry() {
 	var d = document.getElementById('countryDiv');
@@ -194,12 +194,12 @@ function displayBeforeAccordingly(catType) {
 	var newDropdown = document.createElement('form');
 	newDropdown.setAttribute('id',"beforeDD");
 	newDropdown.setAttribute("method", "POST");
-	newDropdown.setAttribute("action", 
-		"https://script.google.com/macros/s/AKfycbyWzLkLO4oTg8JT6CGtejsrIePfIb3zPkd6SG2IOLTQrx9lgg-F/exec");
 
 	catType = catType.split(" ")[0];
 	switch(catType) {
-		case "violence": 
+		case "violence":
+		newDropdown.setAttribute("action",
+			"https://script.google.com/macros/s/AKfycbzFYvhnMfUifvu1AOT2fMUia-93rBp1sVcqSHIy97co8LYZJbp9/exec");
 			var j = 0;
 			//Create the new question
 			//for how many questions i have in my array (N), do these steps N times
@@ -212,14 +212,14 @@ function displayBeforeAccordingly(catType) {
 				//create options
 				var DD = document.createElement('select');
 				DD.setAttribute("id", beforeViolence[i]);
-				DD.setAttribute("name", "Reaction");
+				DD.setAttribute("name", beforeViolence[i]);
 
 				for(; j<beforeViolenceOpts.length; j++) {
 
 					if(Array.isArray(beforeViolenceOpts[j])) { //if there are mulitple questions, store each Q's opts as an array
 						for(var k=0; k<beforeViolenceOpts[j].length; k++) {
 							var option = document.createElement('option'); //to store each options in DD
-							option.setAttribute("name", "Reaction");
+							option.setAttribute("name", "Reactions");
 							option.setAttribute("value", beforeViolenceOpts[j][k]);
 							option.innerHTML = beforeViolenceOpts[j][k];
 							DD.appendChild(option);
@@ -228,12 +228,12 @@ function displayBeforeAccordingly(catType) {
 						break;
 					} else {
 						var option = document.createElement('option'); //to store each options in DD
-							option.setAttribute("name", "Reaction");
+							option.setAttribute("name", beforeViolence[i]);
 							option.setAttribute("value", beforeViolenceOpts[j]);
 							option.innerHTML = beforeViolenceOpts[j];
 							DD.appendChild(option);
 					}
-					
+
 				}
 				var breakline = document.createElement('p'); //to create space in between questions
 				newDropdown.appendChild(DD);
@@ -254,6 +254,8 @@ function displayBeforeAccordingly(catType) {
 				label.setAttribute("style", "margin:3px;");
 				label.innerHTML = beforeEmployment[i];
 				newDropdown.appendChild(label);
+				newDropdown.setAttribute("action",
+					"https://script.google.com/macros/s/AKfycbxP0am3GpBrW5-5OjCiY7FGg2DvvaAUdk2XPW6NcwGXfEMlcmM/exec");
 
 				//create options
 				var DD = document.createElement('select');
@@ -278,7 +280,7 @@ function displayBeforeAccordingly(catType) {
 							option.innerHTML = beforeEmploymentOpts[j];
 							DD.appendChild(option);
 					}
-					
+
 				}
 				var breakline = document.createElement('p'); //to create space in between questions
 				newDropdown.appendChild(DD);
@@ -291,7 +293,7 @@ function displayBeforeAccordingly(catType) {
 			newDropdown.appendChild(btn);
 			break;
 
-		case "education": 
+		case "education":
 			var j = 0;
 			for(var i=0; i<beforeEducation.length; i++) {
 				//create the label
@@ -305,6 +307,8 @@ function displayBeforeAccordingly(catType) {
 				DD.setAttribute("id", beforeEducation[i]);
 				DD.setAttribute("name", beforeEducation[i]);
 				DD.setAttribute("style", "margin:3px;");
+				newDropdown.setAttribute("action",
+					"https://script.google.com/macros/s/AKfycbxwoaLk_7E9q8cQ3hmm5hmrusEGwcwbKS4NWZ9t31Ciqh5oQfFK/exec");
 
 				for(; j<beforeEducationOpts.length; j++) {
 
@@ -316,14 +320,14 @@ function displayBeforeAccordingly(catType) {
 							DD.appendChild(option);
 						}
 						j++;
-						break; 
+						break;
 					} else {
 						var option = document.createElement('option'); //to store each options in DD
 							option.setAttribute("value", beforeEducationOpts[j]);
 							option.innerHTML = beforeEducationOpts[j];
 							DD.appendChild(option);
 					}
-					
+
 				}
 				var breakline = document.createElement('p'); //to create space in between questions
 				newDropdown.appendChild(DD);
@@ -340,7 +344,7 @@ function displayBeforeAccordingly(catType) {
 }
 
 function categoryTypebtnSubmit() {
-	var value = document.getElementById("categoryDD").value; 
+	var value = document.getElementById("categoryDD").value;
 	value += " " + document.getElementById("typeDD").value;
 	console.log(value);
 	displayBeforeAccordingly(value);
@@ -362,7 +366,7 @@ function drawChart(category) {
     case "violence Physical Singapore":
     	var numOfGraphs = 3;
     	var graphsURL = ["https://docs.google.com/spreadsheets/d/1uhh7d5oAUXaQMX7SeqrCC39DCHkLwDdh_s_HQ34ny7o/gviz/tq?range=A:B", "https://docs.google.com/spreadsheets/d/1UtWiiUXKtLmXRcJiXISE6qlrDTYyeKAvMammsVjZd0A/gviz/tq?range=A1:D6", "https://docs.google.com/spreadsheets/d/1B1iGs7YlxE7unDMc3xD-r5iVvEV6J8dUW-zX0NrI1ag/gviz/tq?range=A:B"];
-      	//draw data from google spreadsheet to create graph 
+      	//draw data from google spreadsheet to create graph
       	for(var i = 0; i<numOfGraphs; i++) {
       		var q = new google.visualization.Query(graphsURL[i]);
       		q.send(handleQueryResponse2);
@@ -371,7 +375,7 @@ function drawChart(category) {
       	createdChart = 1;
       	break;
 
-    case "violence Physical Japan": 
+    case "violence Physical Japan":
     	var graphsURL = "https://docs.google.com/spreadsheets/d/1Kg-otTTr5ZbSolu5-CnubXnb1qol5-jicfFhF5MfI3k/gviz/tq?range=A:B";
     	var q = new google.visualization.Query(graphsURL);
     	q.send(handleQueryResponse2);
@@ -379,7 +383,7 @@ function drawChart(category) {
     	createdChart = 1;
     	break;
 
-    case "violence Physical India": 
+    case "violence Physical India":
     	var graphsURL = "https://docs.google.com/spreadsheets/d/1Tq224nGPkvNZD2h8UQDCpwKtmhveQ0hCoDaiSSoR_vQ/gviz/tq?range=A:B";
     	var q = new google.visualization.Query(graphsURL);
     	q.send(handleQueryResponse2);
@@ -389,7 +393,7 @@ function drawChart(category) {
 
     case "violence Sexual Singapore":
     	var graphsURL = ["https://docs.google.com/spreadsheets/d/1LEAF596FA3vK37phBlk9I1lv7wtN3P_-LxvMSyy5HIo/gviz/tq?range=A1:C7",
-    					"https://docs.google.com/spreadsheets/d/1STJ1u9EB_PpS77FrVjl-dLKGBpwFRxrwcgcF8ZBYbjI/gviz/tq?range=A1:D5", 
+    					"https://docs.google.com/spreadsheets/d/1STJ1u9EB_PpS77FrVjl-dLKGBpwFRxrwcgcF8ZBYbjI/gviz/tq?range=A1:D5",
     					"https://docs.google.com/spreadsheets/d/19e4d6AM00VeAzDArLNmrxr-T9qHnUmiDMQj4JVcN7QI/gviz/tq?range=A1:B3"];
     	var numOfGraphs = 3;
     	for(var i = 0; i<numOfGraphs; i++) {
@@ -400,7 +404,7 @@ function drawChart(category) {
     	createdChart = 1;
       	break;
 
-    case "violence Sexual Japan": 
+    case "violence Sexual Japan":
     	var q = new google.visualization.Query("https://docs.google.com/spreadsheets/d/1d4feYuCgHlA2dH_vEu8wxhhQT3KdGNacg-9sd9Vd3fI/gviz/tq?range=A1:B4");
     	q.send(handleQueryResponse2);
 
@@ -425,35 +429,35 @@ function drawChart(category) {
     	createdChart = 1;
     	break;
 
-    case "employment Leadership China": 
+    case "employment Leadership China":
     	var q = new google.visualization.Query("https://docs.google.com/spreadsheets/d/1MafD6FxJbQ9WjoLzqGfawn9RvJucS8YXvh-bfqW2mQQ/gviz/tq?range=A1:B4");
     	q.send(handleQueryResponse2);
 
     	createdChart = 1;
     	break;
 
-    case "employment Leadership Japan": 
+    case "employment Leadership Japan":
     	var q = new google.visualization.Query("https://docs.google.com/spreadsheets/d/141udVjAT4hOSfBS3q61TX7BBxvHEj2j6vXVyMKGwWig/gviz/tq?range=A1:B4");
     	q.send(handleQueryResponse2);
 
     	createdChart = 1;
-    	break; 
+    	break;
 
-    case "employment Salary Singapore": 
+    case "employment Salary Singapore":
     	var q = new google.visualization.Query("https://docs.google.com/spreadsheets/d/1oQram8qoTdiVjEwCct2vqL68uKQjBFO_TDDfe6MOqeo/gviz/tq?range=A1:B3");
     	q.send(handleQueryResponse2);
 
     	createdChart = 1;
-    	break; 
+    	break;
 
-    case "employment Salary Japan": 
+    case "employment Salary Japan":
     	var q = new google.visualization.Query("https://docs.google.com/spreadsheets/d/1aKhIf-a6gj-bFVKUSW62mEKtbGSCTcYQTfzFwAB6OIs/gviz/tq?range=A1:B16");
     	q.send(handleQueryResponse3);
-    	
+
     	createdChart = 1;
     	break;
 
-    case "employment Salary China": 
+    case "employment Salary China":
     	var graphsURL = ["https://docs.google.com/spreadsheets/d/1qQBwa-9MnP1NUpEzWh6oSgdOGU4D148IQGL_2BwBP4o/gviz/tq?range=A1:B3", "https://docs.google.com/spreadsheets/d/1H80BOVkDL_uBiO2v4Zrrgok7VqI0RO26UMBjN7P_j14/gviz/tq?range=A1:C3"];
     	var numOfGraphs = 2;
     	for(var i = 0; i<numOfGraphs; i++) {
@@ -465,8 +469,8 @@ function drawChart(category) {
     	break;
 
     case "education Literacy Singapore":
-    	var graphsURL = ["https://docs.google.com/spreadsheets/d/1pFCxzFl6TUH2HvFJk4Iu5rDEHoKXmzKBqV2SvDByXAY/gviz/tq?range=A1:B5", 
-    						"https://docs.google.com/spreadsheets/d/1cNzeilEHTjboMDJIcXNZBk2ZCNUEuAMdmpxA34Gw-1I/gviz/tq?range=A1:G7", 
+    	var graphsURL = ["https://docs.google.com/spreadsheets/d/1pFCxzFl6TUH2HvFJk4Iu5rDEHoKXmzKBqV2SvDByXAY/gviz/tq?range=A1:B5",
+    						"https://docs.google.com/spreadsheets/d/1cNzeilEHTjboMDJIcXNZBk2ZCNUEuAMdmpxA34Gw-1I/gviz/tq?range=A1:G7",
     						"https://docs.google.com/spreadsheets/d/1Yw_URqMiu2Xepso1SNmhFEXOmBPiq1skB-km1yn27r8/gviz/tq?range=A1:B3"];
     	var numOfGraphs = graphsURL.length;
     	for(var i = 0; i < numOfGraphs; i++) {
@@ -489,7 +493,7 @@ function drawChart(category) {
     	break;
 
     case "education Skills Singapore":
-    	var graphsURL = ["https://docs.google.com/spreadsheets/d/1HqqCaHsElNTOrM9jtYmqRBTU-6AOU7LhCeMZWw3ZQws/gviz/tq?range=A1:B3", 
+    	var graphsURL = ["https://docs.google.com/spreadsheets/d/1HqqCaHsElNTOrM9jtYmqRBTU-6AOU7LhCeMZWw3ZQws/gviz/tq?range=A1:B3",
     					"https://docs.google.com/spreadsheets/d/18UvI6x2EtnKVN9MAnl9Tb86alp1e51_sYSAco21EtIc/gviz/tq?range=A1:C11"];
     	var numOfGraphs = graphsURL.length;
     	for(var i = 0; i < numOfGraphs; i++) {
@@ -500,7 +504,7 @@ function drawChart(category) {
     	createdChart = 1;
     	break;
 
-    case "education Skills India": 
+    case "education Skills India":
     	var q = new google.visualization.Query("https://docs.google.com/spreadsheets/d/1DXEk4OZ78x-HjA7lQsiQ0l2Jjpa5Q8zFrL5r9caU7zU/gviz/tq?range=B1:G8");
     	q.send(handleQueryResponse2);
 
@@ -527,7 +531,7 @@ function handleQueryResponse2(response) { //for bar charts
     var options = {'width': 860, 'height': '400', pieSliceText:'percentage','backgroundColor': 'lightblue'};
     chart.draw(data, options);
     areaToAppendChart.appendChild(helper);
-  } 
+  }
 
  function handleQueryResponse3(response) { //for line charts
  	var data = response.getDataTable();
