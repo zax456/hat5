@@ -18,10 +18,14 @@
       color: #000000;
   }
   p {
-  	font-size: 16px;
+  	font-size: 12px;
   }
+<<<<<<< HEAD
   
   .landing { 
+=======
+  .landing {
+>>>>>>> 3ba9fec1882d5be83e90ea665374fd98e139b4b2
       background-color: #B85858; /* Green */
       padding-top: 40px;
       padding-bottom: 75px;
@@ -35,6 +39,9 @@
       margin-bottom: 0;
       font-size: 12px;
       letter-spacing: 5px;
+      position: fixed;
+      z-index: 1;
+      width:100%;
   }
   .navbar-nav  li a:hover {
       color: #1abc9c !important;
@@ -62,6 +69,7 @@
 }
 
 .container-fluid {
+  width:100%;
   color:#868686;
 }
 
@@ -90,9 +98,9 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" >HOME</a>
+      <a class="navbar-brand" >SeeQUAL</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -107,59 +115,70 @@
 </nav>
 
 <!-- Carousel screen -->
-<div class="container">
+<div class="container" style="padding-top: 100px">
     <div class="row">
         <div class="col-md-12">
             <div id="carousel-example" class="carousel slide" data-ride="carousel">
+
                 <ol class="carousel-indicators">
+
                     <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
                     <li data-target="#carousel-example" data-slide-to="1"></li>
                     <li data-target="#carousel-example" data-slide-to="2"></li>
+                    <p><a class="btn btn-clear btn-sm btn-min-block" href="data.html">See the Statistics</a></p>
                 </ol>
                 <div class="carousel-inner">
                     <div class="item active">
-                        <center><img src="pic1.jpg" alt="First slide" width="1200" height="400" /></center>
+                        <center><img src="pic1.png" alt="First slide" width="1200" height="400" /></center>
                         <div class="carousel-caption">
-                            <p><a class="btn btn-clear btn-sm btn-min-block" href="data.html">See the Statistics</a></p>
+
                         </div>
                     </div>
                     <div class="item">
-                        <center><img src="pic2.png" alt="Second slide" width="1200" height="400"/></center>
+                        <center><img src="pic2.jpg" alt="Second slide" width="1200" height="400"/></center>
                         <div class="carousel-caption">
-                            <p><a class="btn btn-clear btn-sm btn-min-block" href="data.html">See the Statistics</a></p>
                         </div>
                     </div>
                     <div class="item">
                         <center><img src="pic3.jpg" alt="Third slide" width="1200" height="400"/></center>
                         <div class="carousel-caption">
-                            <p><a class="btn btn-clear btn-sm btn-min-block" href="data.html">See the Statistics</a></p>
                         </div>
                     </div>
                 </div>
 
+
+
+              <a class="left carousel-control" href="#carousel-example" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-            
+
         </div>
     </div>
 </div>
-  
 
-<div class="container-fluid bg-3 text-center">    
+
+<div class="container-fluid bg-3 text-center">
   <div class="row">
     <div class="col-sm-4">
     <h2> Stories </h2>
           <center><img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Messaging-Speech-Bubble-icon.png" class="img-responsive margin" width="50" height="50"></center></br>
-      <p>Summary of stories</p>
+      <p>Many women face a range of unequal treatment to abuse daily. Hear of some of their personal struggles, and how some of them took action against the discrimination they were facing.</p>
     </div>
-    <div class="col-sm-4"> 
+    <div class="col-sm-4">
     <h2> Data </h2>
           <center><img src="https://s-media-cache-ak0.pinimg.com/originals/04/fe/7b/04fe7bf70776ed9cb2d2c9bf570d23f4.png" class="img-responsive margin" width="50" height="50"></center></br>
-      <p>Summary of datax</p>
+      <p>The extent of discrimination faced is far more severe than most of us would expect. Here, navigate through the various categories of discrimination faced across various countries and realise how many people are suffering in silence each day.</p>
     </div>
-    <div class="col-sm-4"> 
+    <div class="col-sm-4">
     <h2> Contact </h2>
       <center><img src="http://images.clipartpanda.com/phone-icon-jTxR888TE.png" class="img-responsive margin" width="50" height="50"></center></br>
-      <p>Summary of contact</p>
+      <p>If you are, or know someone who is facing inequality who is, in need of help, remember that you are not alone. There are many avenues of help available, and here are some of them.  </p>
     </div>
   </div>
 </div>

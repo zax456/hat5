@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <style>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
@@ -20,7 +21,7 @@
       font-size: 12px;
       letter-spacing: 5px;
   }
-  
+
   .navbar-nav  li a:hover {
       color: #1abc9c !important;
   }
@@ -64,7 +65,7 @@
   }
 
   #afterPerception {
-    border: 1px solid orange;
+    /*border: 1px solid orange;*/
     margin: 3px;
     height: auto;
     width: auto;
