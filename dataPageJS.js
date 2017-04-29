@@ -459,12 +459,14 @@ function drawChart(category) {
     	createdChart = 1;
     	break;
 
+    var handlerType = [handleQueryResponse2, handleQueryResponse3]
     case "education Literacy India":
     	var graphsURL = ["https://docs.google.com/spreadsheets/d/1J9XPeQnHwd5aGM4O7UJqweR-UpaCx6BlUUSiGlFaFaE/gviz/tq?range=A1:C3", "https://docs.google.com/spreadsheets/d/1d25rCYFoUrZJGTHRf4-PKnDYfumM0xRrLqIRDRM9Xbk/gviz/tq?range=A1:D4"];
+    	var graphType = [0, 0, 1]
     	var numOfGraphs = graphsURL.length;
     	for(var i = 0; i < numOfGraphs; i++) {
     		var q = new google.visualization.Query(graphsURL[i]);
-    		q.send(handleQueryResponse2);
+    		q.send(handlerType[i]);
     	}
 
     	createdChart = 1;
